@@ -13,13 +13,13 @@ sudo apt install curl # if you haven't already installed curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 ```
 
-3. Installation
+3. apt update
 ```bash
 sudo apt update
 ```
-4.Desktop-Full Install
+4.install full-version of noetic
 ```bash
-Desktop-Full Install
+sudo apt install ros-noetic-desktop-full
 ```
 5.Environment setup
 ```bash
@@ -27,7 +27,12 @@ source /opt/ros/noetic/setup.bash
 ```
 
 6.It can be convenient to automatically source this script every time a new shell is launched
-
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+```
+7. Create a ROS Workspace
+```bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
 ```
