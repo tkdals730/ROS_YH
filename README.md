@@ -36,3 +36,22 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 ```
+# 터틀 필드 분석
+```bash
+roscore  #마스터
+새 터미널 실행 
+rosrun turtlesim turtlesim_node #프로그램 실행 노드
+새 터미널 실행    
+rosrun turtlesim turtle_teleop_key # 방향키 이동 
+새 터미널 실행
+rostopic echo /turtle1/pose # 이동 좌표등등
+
+```
+실행결과:\
+x: 5.544444561004639   #좌우로 이동시 변경\
+y: 5.544444561004639   #상하로 이동시 변경\
+theta: 0.0             #바라보는 방향?각도?\
+linear_velocity: 0.0   #이동속도 이동시 2.0\
+angular_velocity: 0.0   #회전속도 
+
+
