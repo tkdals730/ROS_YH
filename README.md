@@ -24,8 +24,10 @@ Desktop-Full Install
 5.Environment setup
 ```bash
 source /opt/ros/noetic/setup.bash
-'''
-6.
+```
+
+6.It can be convenient to automatically source this script every time a new shell is launched
+
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 ```
