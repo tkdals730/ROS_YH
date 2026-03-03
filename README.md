@@ -92,3 +92,10 @@ float32 linear_velocity
 float32 angular_velocity
 
 ```
+# 거북이 이동
+```bash
+# 직진
+$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist '[2.0, 0.0, 0.0]' '[0.0, 0.0, 0.0]'
+# 회전
+$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist '[0.0, 0.0, 0.0]' '[0.0, 0.0, 1.5708]'
+```
