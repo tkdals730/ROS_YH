@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- 기존 color_turtle.launch를 포함 -->
+
+  <include file="$(find my_package)/launch/color_turtle.launch" />
+
+  <!-- 추가로 rqt_graph 실행 -->
+
+  <node pkg="rqt_graph" type="rqt_graph" name="rqt_graph" />
+
+</launch>
