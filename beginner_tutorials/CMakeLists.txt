@@ -171,6 +171,8 @@ catkin_install_python(
   scripts/string_length_client.py
   scripts/change_pen_client.py
   scripts/calc_server.py
+  scripts/listener.py
+  scripts/pose_listener.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
