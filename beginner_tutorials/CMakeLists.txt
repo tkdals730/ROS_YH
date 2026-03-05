@@ -169,6 +169,7 @@ catkin_install_python(
   scripts/add_two_ints_client.py
   scripts/string_length_server.py
   scripts/string_length_client.py
+  scripts/change_pen_client.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
