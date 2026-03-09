@@ -132,7 +132,7 @@ This link is the base of the arm in which arm is placed
       <geometry>
 	       <box size="1 1 0.02" />
       </geometry>
-      </collision>>
+      </collision>
 
   </link>
 
