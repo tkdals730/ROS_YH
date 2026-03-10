@@ -1,5 +1,13 @@
 <?xml version="1.0" ?>
 <launch>
+  <!-- laser_filters: 바퀴 영역 제거 -->
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain"
+        name="laser_filter">
+    <rosparam command="load"
+              file="$(find diff_wheeled_robot_gazebo)/config/laser_filter.yaml" />
+    <remap from="scan" to="/scan" />              <!-- 입력: 원본 스캔 -->
+    <remap from="scan_filtered" to="/scan_filtered" />  <!-- 출력: 필터된 스캔 -->
+  </node>
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="paused" default="false"/>
