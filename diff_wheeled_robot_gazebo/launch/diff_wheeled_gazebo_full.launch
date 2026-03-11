@@ -24,6 +24,7 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="headless" value="$(arg headless)"/>
+    <!-- <arg name="world_name" value="$(find diff_wheeled_robot_gazebo)/worlds/room.world"/>  룸형식의 월드-->
     <arg name="world_name" value="$(find diff_wheeled_robot_gazebo)/worlds/corridor.world"/>
 
   </include>
