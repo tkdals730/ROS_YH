@@ -6,7 +6,7 @@ from geometry_msgs.msg import Twist
 # ===== 파라미터 =====
 DIST_THRESHOLD = 0.8   # 벽까지 이 거리 이내면 "가깝다"고 판단 (m)
 LINEAR_SPEED = 0.15    # 전진 속도 (m/s)
-ANGULAR_SPEED = 0.2    # 회전 속도 (rad/s)
+ANGULAR_SPEED = 0.3    # 회전 속도 (rad/s)
 
 class WallFollower:
     def __init__(self):
@@ -34,26 +34,27 @@ class WallFollower:
 
         d = DIST_THRESHOLD
 
-        if   r['front'] > d and r['front_right'] > d and r['right'] > d:
+        if   r['front'] > d and r['front_left'] > d and r['left'] > d:
             self.state = 'find_wall'
         elif r['front'] < d:
-            self.state = 'turn_left'
+            self.state = 'turn_right'
         else:
             self.state = 'follow_wall'
-      
+
     def act(self):
         twist = Twist()
 
         if self.state == 'find_wall':
-            # 벽을 찾을 때까지 전진 + 약간 우회전
+            # 벽을 찾을 때까지 전진 + 약간 좌회전
             twist.linear.x = LINEAR_SPEED
-            twist.angular.z = -ANGULAR_SPEED * 0.5
-        elif self.state == 'turn_left':
-            # 전방에 벽 → 좌회전
-            twist.angular.z = ANGULAR_SPEED
+            twist.angular.z = ANGULAR_SPEED * 0.5
+        elif self.state == 'turn_right':
+            # 전방에 벽 → 우회전
+            twist.angular.z = -ANGULAR_SPEED
         elif self.state == 'follow_wall':
             # 오른쪽에 벽 → 직진
             twist.linear.x = LINEAR_SPEED
+
         self.pub.publish(twist)
 
     def run(self):
