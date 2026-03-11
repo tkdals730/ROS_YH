@@ -34,53 +34,26 @@ class WallFollower:
 
         d = DIST_THRESHOLD
 
-        # if   r['front'] > d and r['front_right'] > d and r['right'] > d:
-        #     self.state = 'find_wall'
-        # elif r['front'] < d:
-        #     self.state = 'turn_left'
-        # else:
-        #     self.state = 'follow_wall'
         if   r['front'] > d and r['front_right'] > d and r['right'] > d:
             self.state = 'find_wall'
-        elif r['front'] < d and r['front_left'] > d and r['left'] > d and  r['right'] < d and  r['front_right'] < d:
+        elif r['front'] < d:
             self.state = 'turn_left'
-        elif r['front'] < d and r['front_left'] < d and r['left'] < d and r['right'] > d and r['front_right'] > d:
-            self.state = 'turn_right'
-        elif r['front'] <0.2 or r['front_left'] < 0.2 or r['left'] < 0.2 or r['right'] < 0.2 or r['front_right'] < 0.2:
-            self.state = 'back'
         else:
             self.state = 'follow_wall'
-
+      
     def act(self):
         twist = Twist()
 
-        # if self.state == 'find_wall':
-        #     # 벽을 찾을 때까지 전진 + 약간 우회전
-        #     twist.linear.x = LINEAR_SPEED
-        #     twist.angular.z = -ANGULAR_SPEED * 0.5
-        # elif self.state == 'turn_left':
-        #     # 전방에 벽 → 좌회전
-        #     twist.angular.z = ANGULAR_SPEED
-        # elif self.state == 'follow_wall':
-        #     # 오른쪽에 벽 → 직진
-        #     twist.linear.x = LINEAR_SPEED
-        
         if self.state == 'find_wall':
-            # 벽을 찾을 때까지 전진 + 약간 좌회전
+            # 벽을 찾을 때까지 전진 + 약간 우회전
             twist.linear.x = LINEAR_SPEED
-            twist.angular.z = ANGULAR_SPEED * 0.5
+            twist.angular.z = -ANGULAR_SPEED * 0.5
         elif self.state == 'turn_left':
             # 전방에 벽 → 좌회전
             twist.angular.z = ANGULAR_SPEED
-        elif self.state == 'turn_right':
-            # 전방에 벽 → 우회전
-            twist.angular.z = -ANGULAR_SPEED
         elif self.state == 'follow_wall':
             # 오른쪽에 벽 → 직진
             twist.linear.x = LINEAR_SPEED
-        elif self.state == 'back':
-            # 오른쪽에 벽 → 직진
-            twist.linear.x = -LINEAR_SPEED
         self.pub.publish(twist)
 
     def run(self):
