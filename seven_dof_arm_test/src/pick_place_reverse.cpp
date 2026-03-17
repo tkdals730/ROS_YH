@@ -167,7 +167,7 @@ int main(int argc, char **argv) {
 	cout << "Picked!" << endl;
 	
 	target_pose.position.y = -0.1;
-	target_pose.position.x = 0.34;
+	target_pose.position.x = 0.46;
 	target_pose.position.z = 0.35;
 	group.setPoseTarget(target_pose);
 	group.move();
@@ -178,7 +178,7 @@ int main(int argc, char **argv) {
 	att_coll_object.object.id = "grasping_object";
 	planning_scene_interface.applyAttachedCollisionObject(att_coll_object);
 
-	target_pose.position.y = -0.1;
+	target_pose.position.y = 0.0;
 	target_pose.position.x = 0.32;
 	target_pose.position.z = 0.35;
 	group.setPoseTarget(target_pose);
