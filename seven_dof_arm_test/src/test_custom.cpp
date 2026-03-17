@@ -99,6 +99,15 @@ int main(int argc, char **argv)
   target_pose1.position.x = 0.0261186;
   target_pose1.position.y = 4.50972e-07;
   target_pose1.position.z = 0.573659;
+  
+  // target_pose1.orientation.w = 1.726282;
+  // target_pose1.orientation.x= 2.04423e-07;
+  // target_pose1.orientation.y = -5.687396;
+  // target_pose1.orientation.z = 6.81813e-07;
+
+  // target_pose1.position.x = 0.0261186;
+  // target_pose1.position.y = 4.50972e-07;
+  // target_pose1.position.z = 0.573659;
   group.setPoseTarget(target_pose1);
 
 
