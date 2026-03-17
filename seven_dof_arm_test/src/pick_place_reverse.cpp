@@ -118,7 +118,7 @@ int main(int argc, char **argv) {
 	
 	//---grasping
 	target_pose.position.y = -0.1;
-	target_pose.position.x = 0.34;
+	target_pose.position.x = 0.38;
 	target_pose.position.z = 0.35;
 	group.setPoseTarget(target_pose);
 	group.move();
@@ -141,9 +141,9 @@ int main(int argc, char **argv) {
 
 	cout << "second motion!" << endl;
 	//---move far away from the grasping position
-	target_pose.position.y = 0.0;
+	target_pose.position.y = -0.1;
 	target_pose.position.x = 0.34;
-	target_pose.position.z = 0.4;
+	target_pose.position.z = 0.5;
 	group.setPoseTarget(target_pose);
 	group.move();
 	sleep(2);
