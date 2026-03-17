@@ -163,14 +163,19 @@ target_link_libraries(remove_collision_objct
 
 ## Declare a cpp executable
 add_executable(pick_place src/pick_place.cpp)
+add_executable(pick_place_reverse src/pick_place_reverse.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(pick_place seven_dof_arm_test_generate_messages_cpp)
+add_dependencies(pick_place_reverse seven_dof_arm_test_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(pick_place
    ${catkin_LIBRARIES}
+)
+target_link_libraries(pick_place_reverse 
+${catkin_LIBRARIES}
 )
 
 ## Declare a cpp executable
