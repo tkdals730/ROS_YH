@@ -80,10 +80,9 @@
           </cylinder></geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder>
-          <radius>1</radius>
-          <length>1</length>
-          </cylinder></geometry>
+          <geometry><box>
+          <size>2 2 2</size>
+          </box></geometry>
           <material><ambient>0.3 0.3 0.8 1</ambient></material>
         </visual>
       </link>
