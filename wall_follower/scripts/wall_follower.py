@@ -5,7 +5,7 @@ from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
 
 # ===== Parameters =====
-LINEAR_SPEED = 0.15 # 직진속도(m/s)
+LINEAR_SPEED = 0.10 # 직진속도(m/s)
 ANGULAR_SPEED = 0.7 # 회전속도(rad/s)
 DESIRED_DISTANCE = 0.5 # 벽과 유지할 거리(m)
 FRONT_THRESHOLD = 0.35 # 앞에 벽이 있다고 판단하는 거리 
