@@ -7,8 +7,8 @@ from geometry_msgs.msg import Twist
 # ===== Parameters =====
 LINEAR_SPEED = 0.15 # 직진속도(m/s)
 ANGULAR_SPEED = 0.5 # 회전속도(rad/s)
-DESIRED_DISTANCE = 0.8 # 벽과 유지할 거리(m)
-FRONT_THRESHOLD = 0.9 # 앞에 벽이 있다고 판단하는 거리 
+DESIRED_DISTANCE = 0.7 # 벽과 유지할 거리(m)
+FRONT_THRESHOLD = 0.6 # 앞에 벽이 있다고 판단하는 거리 
 
 class WallFollowerPID:
     def __init__(self):
